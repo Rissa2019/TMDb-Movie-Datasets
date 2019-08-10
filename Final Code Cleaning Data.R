@@ -1,7 +1,7 @@
 library(tidyverse)
 
-movies_data = read.csv("/Users/kristinaliapchin/Downloads/njson_movie_data.csv")
-cast_data = read.csv("/Users/kristinaliapchin/Downloads/njson_cast_data.csv")
+movies_data = read.csv("njson_movie_data.csv")
+cast_data = read.csv("njson_cast_data.csv")
 
 
 #Renaming ID column to match in both datasets
@@ -218,7 +218,7 @@ data$top_paid_actor = as.numeric(sapply(data$cast, function(x) any(sapply(top_pa
 data$top_paid_actor = factor(data$top_paid_actor,labels=c("no_tp_actor","with_tp_actor"))
 
 #Saving clean data
-write.csv(data, '/Users/kristinaliapchin/Downloads/clean_movie_data_final.csv',row.names = F)
+write.csv(data, 'clean_movie_data_final.csv',row.names = F)
 
-clean_data = read.csv("/Users/kristinaliapchin/Downloads/clean_movie_data_final.csv")
+clean_data = read.csv("clean_movie_data_final.csv")
 
